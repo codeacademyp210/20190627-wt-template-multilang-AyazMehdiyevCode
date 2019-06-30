@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimper", "Chimper\Chimper.csproj", "{E69CFB0F-6A01-4171-A877-38DC44E67152}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E69CFB0F-6A01-4171-A877-38DC44E67152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E69CFB0F-6A01-4171-A877-38DC44E67152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E69CFB0F-6A01-4171-A877-38DC44E67152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E69CFB0F-6A01-4171-A877-38DC44E67152}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1ECB93A4-3E70-4949-A7EF-37171CA83688}
+	EndGlobalSection
+EndGlobal

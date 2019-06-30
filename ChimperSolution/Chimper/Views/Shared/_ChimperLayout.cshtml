@@ -1,0 +1,155 @@
+﻿@using Chimper.Resources
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chimper &mdash; @ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    @Styles.Render("~/Public/fonts")
+    @Styles.Render("~/Public/css")
+</head>
+
+<body>
+    <div class="site-wrap">
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        <div class="border-bottom top-bar py-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-0">
+                            <span class="mr-3"><strong>@Resource.Phone:</strong> <a href="#">+994 5050 1 5050</a></span>
+                            <span><strong>@Resource.Email:</strong> <a href="#">user@@code.edu.az</a></span>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="social-media">
+                            @foreach (var item in Chimper.Class.LanguageM.AvailableLanguages)
+                            {
+                            <li>@Html.ActionLink(item.LanguageCultureName, "ChangeLang", new { lang = item.LanguageCultureName }, new { @class="p-2" })<span>|</span></li>
+                               
+                            }
+                            <li><a href="#" class="p-2"><span class="icon-facebook"></span></a></li>
+                            <li><a href="#" class="p-2"><span class="icon-twitter"></span></a></li>
+                            <li><a href="#" class="p-2"><span class="icon-instagram"></span></a></li>
+                            <li><a href="#" class="p-2"><span class="icon-linkedin"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="site-navbar py-4 bg-white" role="banner">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-11 col-xl-2">
+                        <h1 class="mb-0 site-logo">@Html.ActionLink("Chimper","Index","Home",null,new { @class="text-black h2 mb-0" })</h1>
+                    </div>
+                    <div class="col-12 col-md-10 d-none d-xl-block">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")">@Html.ActionLink(@Resource.Home,"Index","Home")</li>
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Work" ? "active" : "")">@Html.ActionLink(@Resource.Work, "Index", "Work")</li>
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Services" ? "active" : "") has-children">
+                                    @Html.ActionLink(@Resource.Services, "Index", "Services")
+                                    <ul class="dropdown">
+                                        <li>@Html.ActionLink(@Resource.Web_Applications, "Index", "Services")</li>
+                                        <li>@Html.ActionLink(@Resource.WordPress_Dev, "Index", "Services")</li>
+                                        <li>@Html.ActionLink(@Resource.Mobile_Applications, "Index", "Services")</li>
+                                        <li>@Html.ActionLink(@Resource.eCommerce, "Index", "Services")</li>
+                                    </ul>
+                                </li>
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "About" ? "active" : "")">@Html.ActionLink(@Resource.About, "Index", "About")</li>
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")">@Html.ActionLink(@Resource.Blog, "Index", "Blog")</li>
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")">@Html.ActionLink(@Resource.Contact, "Index", "Contact")</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+                </div>
+            </div>
+        </header>
+    </div>
+    @RenderBody()
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h2 class="footer-heading mb-4">@Resource.About_Us</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+                        </div>
+                        <div class="col-md-3 ml-auto">
+                            <h2 class="footer-heading mb-4">@Resource.Features</h2>
+                            <ul class="list-unstyled">
+                                <li><a href="#">@Resource.About_Us</a></li>
+                                <li><a href="#">@Resource.Services</a></li>
+                                <li><a href="#">@Resource.Testimonials</a></li>
+                                <li><a href="#">@Resource.Contact_Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h2 class="footer-heading mb-4">@Resource.Follow_Us</h2>
+                            <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="footer-heading mb-4">@Resource.Subscribe_Newsletter</h2>
+                    <form action="#" method="post">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="@Resource.Enter_Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary text-white" type="button" id="button-addon2">@Resource.Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <div class="border-top pt-5">
+                        <p>@Resource.Copyright &copy; 2019</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/Public/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="~/Public/js/jquery-migrate-3.0.1.min.js" type="text/javascript"></script>
+    <script src="~/Public/js/jquery-ui.js" type="text/javascript"></script>
+    <script src="~/Public/js/popper.min.js" type="text/javascript"></script>
+    <script src="~/Public/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Public/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="~/Public/js/jquery.stellar.min.js" type="text/javascript"></script>
+    <script src="~/Public/js/jquery.countdown.min.js" type="text/javascript"></script>
+    <script src="~/Public/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+    <script src="~/Public/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    <script src="~/Public/js/aos.js" type="text/javascript"></script>
+    @RenderSection("Typed",required:false)
+    <script src="~/Public/js/main.js" type="text/javascript"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+    <script src="~/Public/js/rocket-loader.min.js" data-cf-settings="81acb8228a0fab54c262b9d7-|49" defer=""></script>
+</body>
+
+</html>
